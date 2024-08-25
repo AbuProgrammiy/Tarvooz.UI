@@ -1,5 +1,5 @@
 <div class="main">
-    <form class="inner-main" (ngSubmit)="sendVerification($event)">
+    <div class="inner-main">
         <div class="content-handler">
             <h3>Ro'yxatdan oting</h3>
         </div>
@@ -14,15 +14,15 @@
             </div>
             <div class="input-group mb-3">
                 <span class="input-group-text" id="basic-addon1">Email</span>
-                <input required type="email" class="form-control" placeholder="email" aria-describedby="basic-addon1">
+                <input [(ngModel)]="email" required type="email" class="form-control" placeholder="email" aria-describedby="basic-addon1">
             </div>
             <div class="input-group mb-3">
                 <span class="input-group-text" id="basic-addon1">Parol</span>
                 <input required type="text" class="form-control" placeholder="parol" aria-describedby="basic-addon1">
             </div>
         </div>
-        <button type="submit" class="btn btn-danger submit-btn">Ro'yhattan o'tish</button>
-    </form>
+        <button (click)="sendVerification()" type="submit" class="btn btn-danger submit-btn">Ro'yhattan o'tish</button>
+    </div>
 </div>
 
 <p-toast/>

@@ -13,6 +13,7 @@ import { MessageService } from 'primeng/api';
 import { ToastModule } from 'primeng/toast';
 import { ButtonModule } from 'primeng/button';
 import { RippleModule } from 'primeng/ripple';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { RippleModule } from 'primeng/ripple';
     HttpClientModule,
     ToastModule,
     ButtonModule,
-    RippleModule
+    RippleModule,
+    FormsModule
   ],
   providers: [MessageService],
   bootstrap: [AppComponent]

@@ -15,20 +15,22 @@ export class SignInUpComponent {
   email!: string
   password!: string
 
-  sendVerification(event:Event) {
-    event.preventDefault();
-
+  sendVerification() {
     const body = {
-      firstName: this.firstName,
-      lastName: this.lastName,
       email: this.email,
-      password: this.password
     }
+
     this.userService.sendVerification(body).subscribe({
       next: (response) => {
-        this.messageService.add({ severity: 'success', summary: 'Success', detail: 'Message Content' });
+        if(response.isSuccess){
+          this.messageService.add({ severity: 'success', summary: 'Success', detail: 'Verification is sent' });
+        }
+        else{
+          this.messageService.add({ severity: 'Warning', summary: 'Warn', detail: response.response });
+        }
       },
       error: (err) => {
+        console.log(err);
         this.messageService.add({ severity: 'error', summary: 'Error', detail: 'Something went wrong' });
       }
     })
