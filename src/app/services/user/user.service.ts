@@ -13,4 +13,12 @@ export class UserService {
   sendVerification(body:any):Observable<any>{
     return this.httpClient.post(`${environment.baseURL}User/SendVerification`,body)
   }
+  
+  register(body:any):Observable<any>{
+    return this.httpClient.post(`${environment.baseURL}User/Register`,body)
+  }
+  
+  logIn(body:any):Observable<any>{
+    return this.httpClient.post(`${environment.baseURL}User/LogIn`,body)
+  }
 }

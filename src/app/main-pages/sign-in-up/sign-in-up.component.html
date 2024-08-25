@@ -1,28 +1,89 @@
 <div class="main">
     <div class="inner-main">
+        <p class="back-arrow" (click)="back()">
+            @if (currentMode!="Register"&&currentMode!="LogIn") {
+                &larr;
+            }
+        </p>
         <div class="content-handler">
-            <h3>Ro'yxatdan oting</h3>
+            <h3>
+                @if (currentMode=="Register") {
+                    Ro'yxatdan oting
+                }
+                @else if (currentMode=="VerifyEmail") {
+                    Emailingizni tasdiqlang
+                }
+                @else if (currentMode=="LogIn") {
+                    Kirish
+                }
+            </h3>
         </div>
         <div class="inputs-handler">
-            <div class="input-group mb-3">
-                <span class="input-group-text" id="basic-addon1">Ismingiz</span>
-                <input required type="text" class="form-control" placeholder="ismingiz" aria-describedby="basic-addon1">
-            </div>
-            <div class="input-group mb-3">
-                <span class="input-group-text" id="basic-addon1">Familyangiz</span>
-                <input required type="text" class="form-control" placeholder="familyangiz" aria-describedby="basic-addon1">
-            </div>
-            <div class="input-group mb-3">
-                <span class="input-group-text" id="basic-addon1">Email</span>
-                <input [(ngModel)]="email" required type="email" class="form-control" placeholder="email" aria-describedby="basic-addon1">
-            </div>
-            <div class="input-group mb-3">
-                <span class="input-group-text" id="basic-addon1">Parol</span>
-                <input required type="text" class="form-control" placeholder="parol" aria-describedby="basic-addon1">
-            </div>
+            @if (currentMode=="Register") {
+                <div class="input-group mb-3">
+                    <span class="input-group-text" id="basic-addon1">Ismingiz</span>
+                    <input [disabled]="isLoading" [(ngModel)]="firstName" required type="text" class="form-control" placeholder="ismingiz" aria-describedby="basic-addon1">
+                </div>
+                <div class="input-group mb-3">
+                    <span class="input-group-text" id="basic-addon1">Familyangiz</span>
+                    <input [disabled]="isLoading" [(ngModel)]="lastName" required type="text" class="form-control" placeholder="familyangiz"
+                        aria-describedby="basic-addon1">
+                </div>
+                <div class="input-group mb-3">
+                    <span class="input-group-text" id="basic-addon1">Email</span>
+                    <input [disabled]="isLoading" [(ngModel)]="email" required type="email" class="form-control" placeholder="email"
+                        aria-describedby="basic-addon1">
+                </div>
+                <div class="input-group mb-3">
+                    <span class="input-group-text" id="basic-addon1">Parol</span>
+                    <input [disabled]="isLoading" [(ngModel)]="password" required type="text" class="form-control" placeholder="parol" aria-describedby="basic-addon1">
+                </div>
+            }
+            @else if (currentMode=="VerifyEmail") {
+                <div class="input-group mb-3">
+                    <span class="input-group-text" id="basic-addon1">Kod</span>
+                    <input [disabled]="isLoading" [(ngModel)]="sentPassword" required type="text" class="form-control" placeholder="kod" aria-describedby="basic-addon1">
+                </div> 
+            }
+            @else if (currentMode=="LogIn") {
+                <div class="input-group mb-3">
+                    <span class="input-group-text" id="basic-addon1">Email</span>
+                    <input [disabled]="isLoading" [(ngModel)]="email" required type="email" class="form-control" placeholder="email"
+                        aria-describedby="basic-addon1">
+                </div>
+                <div class="input-group mb-3">
+                    <span class="input-group-text" id="basic-addon1">Parol</span>
+                    <input [disabled]="isLoading" [(ngModel)]="password" required type="password" class="form-control" placeholder="parol" aria-describedby="basic-addon1">
+                </div>
+            }
         </div>
-        <button (click)="sendVerification()" type="submit" class="btn btn-danger submit-btn">Ro'yhattan o'tish</button>
+        <button [disabled]="isLoading" (click)="directCommand()" type="submit" class="btn btn-danger submit-btn">
+            @if (isLoading) {
+            <div class="spinner-border spinner-border-sm text-light" role="status">
+                <span class="visually-hidden">Loading...</span>
+            </div>
+            }
+            @else {
+                @if (currentMode=="Register") {
+                    Ro'yhattan o'tish
+                }
+                @else if (currentMode=="VerifyEmail") {
+                    Tasdiqlash
+                }
+                @else if (currentMode=="LogIn") {
+                    Kirish
+                }
+            }
+        </button>
+        <div class="content-handler">
+            <p (click)="changeOption()" class="another-option">
+                @if(currentMode=="Register"){
+                    Kirish
+                }
+                @else if (currentMode=="LogIn") {
+                    Ro'yxattan o'tish
+                }
+            </p>
+        </div>
     </div>
 </div>
-
-<p-toast/>

@@ -14,6 +14,7 @@ import { ToastModule } from 'primeng/toast';
 import { ButtonModule } from 'primeng/button';
 import { RippleModule } from 'primeng/ripple';
 import { FormsModule } from '@angular/forms';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { FormsModule } from '@angular/forms';
     ToastModule,
     ButtonModule,
     RippleModule,
-    FormsModule
+    FormsModule,
+    RouterModule
   ],
   providers: [MessageService],
   bootstrap: [AppComponent]
