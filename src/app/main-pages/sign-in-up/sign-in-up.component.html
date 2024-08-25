@@ -1,0 +1,28 @@
+<div class="main">
+    <form class="inner-main" (ngSubmit)="sendVerification($event)">
+        <div class="content-handler">
+            <h3>Ro'yxatdan oting</h3>
+        </div>
+        <div class="inputs-handler">
+            <div class="input-group mb-3">
+                <span class="input-group-text" id="basic-addon1">Ismingiz</span>
+                <input required type="text" class="form-control" placeholder="ismingiz" aria-describedby="basic-addon1">
+            </div>
+            <div class="input-group mb-3">
+                <span class="input-group-text" id="basic-addon1">Familyangiz</span>
+                <input required type="text" class="form-control" placeholder="familyangiz" aria-describedby="basic-addon1">
+            </div>
+            <div class="input-group mb-3">
+                <span class="input-group-text" id="basic-addon1">Email</span>
+                <input required type="email" class="form-control" placeholder="email" aria-describedby="basic-addon1">
+            </div>
+            <div class="input-group mb-3">
+                <span class="input-group-text" id="basic-addon1">Parol</span>
+                <input required type="text" class="form-control" placeholder="parol" aria-describedby="basic-addon1">
+            </div>
+        </div>
+        <button type="submit" class="btn btn-danger submit-btn">Ro'yhattan o'tish</button>
+    </form>
+</div>
+
+<p-toast/>
