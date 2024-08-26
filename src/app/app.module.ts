@@ -15,13 +15,17 @@ import { ButtonModule } from 'primeng/button';
 import { RippleModule } from 'primeng/ripple';
 import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
+import { CreateProductComponent } from './main-pages/create-product/create-product.component';
+import { CreateCategoryComponent } from './main-pages/create-category/create-category.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     SignInUpComponent,
     HomeComponent,
-    NavbarComponent
+    NavbarComponent,
+    CreateProductComponent,
+    CreateCategoryComponent
   ],
   imports: [
     BrowserModule,

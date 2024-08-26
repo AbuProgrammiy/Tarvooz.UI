@@ -63,7 +63,7 @@ export class SignInUpComponent {
           this.messageService.add({ severity: 'success', summary: 'Muvaffaqiyat', detail: response.response });
         }
         else{
-          this.messageService.add({ severity: 'warn', summary: 'Warning', detail: response.response });
+          this.messageService.add({ severity: 'warn', summary: 'Ogohlantirish', detail: response.response });
         }
         this.isLoading=false
       },
@@ -93,7 +93,7 @@ export class SignInUpComponent {
           this.messageService.add({ severity: 'success', summary: 'Muvaffaqiyat', detail: "Siz ro'yxattan o'tdingiz" });
         }
         else{
-          this.messageService.add({ severity: 'warn', summary: 'Warning', detail: response.response });
+          this.messageService.add({ severity: 'warn', summary: 'Ogohlantirish', detail: response.response });
         }
         this.isLoading=false
       },
@@ -120,7 +120,7 @@ export class SignInUpComponent {
           this.messageService.add({ severity: 'success', summary: 'Muvaffaqiyat', detail: "Siz akkauntingiz kirdingiz" });
         }
         else{
-          this.messageService.add({ severity: 'warn', summary: 'Warning', detail: response.response });
+          this.messageService.add({ severity: 'warn', summary: 'Ogohlantirish', detail: response.response });
         }
         this.isLoading=false
       },

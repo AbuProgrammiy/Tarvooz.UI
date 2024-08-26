@@ -1,3 +1,8 @@
+.navbar{
+    background-color: rgba($color: white, $alpha: 0.7)!important;
+    backdrop-filter: blur(5px);
+}
+
 .navbar-brand{
     display: flex;
     align-items: center;
@@ -13,12 +18,23 @@
     color: rgb(47,147,59);
 }
 
-.nav-items{
-    width: 100%;
-    display: flex;
-    justify-content: end;
+.categories-btn{
+    margin-left: 20px;
+    margin-right: 20px;
 }
 
 .search-box{
     width: 400px;
+}
+
+.accordion-body{
+    padding-right: 100px;
+    padding-left: 100px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.category-btn{
+    margin: 20px;
 }

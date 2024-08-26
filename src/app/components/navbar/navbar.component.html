@@ -9,15 +9,24 @@
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <button class="btn btn-danger categories-btn" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne"
+                aria-expanded="false" aria-controls="flush-collapseOne">Kategorialar</button>
             <form class="d-flex search-box" role="search">
                 <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
                 <button class="btn btn-outline-success" type="submit">Qidirish</button>
             </form>
-            <div class="nav-items">
-                <i class="bi bi-substack"></i>
-                <i class="bi bi-substack"></i>
-                <i class="bi bi-substack"></i>
-            </div>
         </div>
     </div>
 </nav>
+
+<div class="accordion accordion-flush" id="accordionFlushExample">
+    <div class="accordion-item">
+        <div id="flush-collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+            <div class="accordion-body">
+                @for (category of categories; track $index) {
+                    <button type="button" class="btn btn-outline-secondary category-btn">{{category["name"]}}</button>
+                }
+            </div>
+        </div>
+    </div>
+</div>
