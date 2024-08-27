@@ -16,14 +16,18 @@ export class HomeComponent {
   products!:any
   baseImageUrl:string=environment.baseImageURL
 
+  isLoading:boolean=true
+
   getAllProducts(){
     this.productService.getAll().subscribe({
       next:(response)=>{
         this.products=response
-        console.log(response);
+        this.isLoading=false
       },
       error:(err)=>{
         this.messageService.add({ severity: 'error', summary: 'Xato', detail: 'Nimadir xato ketdi!' });
+        this.isLoading=false
+
       }
     })
   }

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import { CategoryService } from '../../services/category/category.service';
 import { MessageService } from 'primeng/api';
 
@@ -8,6 +8,9 @@ import { MessageService } from 'primeng/api';
   styleUrl: './navbar.component.scss'
 })
 export class NavbarComponent {
+
+  @Output() giveCategoryName=new EventEmitter()
+
   constructor(private categoryService:CategoryService, private messageService:MessageService){
     this.getAllCategory()
   }
@@ -23,5 +26,10 @@ export class NavbarComponent {
         this.messageService.add({ severity: 'error', summary: 'Xato', detail: 'Nimadir xato ketdi!' });
       }
     })
+  }
+
+  chooseCategory(name:any){
+    console.log(name);
+    this.giveCategoryName.emit(name)
   }
 }

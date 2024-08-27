@@ -1,5 +1,4 @@
 <div class="main">
-    <div class="background"></div>
     <navbar/>
     <div class="content-handler">
         <div id="carouselExampleIndicators" class="carousel slide">
@@ -24,15 +23,24 @@
           </div>
     </div>
     <div class="cards-handler">
-      @for (product of products; track $index) {
-        <div class="card" style="width: 18rem;">
-          <img [src]="baseImageUrl+product['imagePath']" class="card-img-top" alt="...">
-          <div class="card-body">
-            <h5 class="card-title">{{product["name"]}}</h5>
-            <p class="card-text">{{product["description"]}}</p>
-            <button href="#" class="btn btn-success card-btn">Savatga qo'shish</button>
+      @if (isLoading) {
+        <div class="content-handler">
+          <div class="main-spinner spinner-border text-success" role="status">
+            <span class="visually-hidden">Loading...</span>
           </div>
         </div>
+      }
+      @else {
+        @for (product of products; track $index) {
+          <div class="card" style="width: 18rem;">
+            <img [src]="baseImageUrl+product['imagePath']" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">{{product["name"]}}</h5>
+              <p class="card-text">{{product["description"]}}</p>
+              <button href="#" class="btn btn-success card-btn">Savatga qo'shish</button>
+            </div>
+          </div>
+        }
       }
     </div>
 </div>
