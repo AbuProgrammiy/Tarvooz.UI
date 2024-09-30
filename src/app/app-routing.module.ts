@@ -7,6 +7,8 @@ import { CreateCategoryComponent } from './main-pages/create-category/create-cat
 import { ProfileComponent } from './main-pages/profile/profile.component';
 import { DashboardComponent } from './main-pages/dashboard/dashboard.component';
 import { UsersProductsComponent } from './main-pages/users-products/users-products.component';
+import { StatisticsComponent } from './main-pages/statistics/statistics.component';
+import { BasketComponent } from './main-pages/basket/basket.component';
 
 const routes: Routes = [
   {path:"",component:HomeComponent},
@@ -15,6 +17,8 @@ const routes: Routes = [
   {path:"profile",component:ProfileComponent},
   {path:"dashboard",component:DashboardComponent},
   {path:"users-products",component:UsersProductsComponent},
+  {path:"statistics",component:StatisticsComponent},
+  {path:"basket",component:BasketComponent},
   {path:"create-category",component:CreateCategoryComponent}
 ];
 

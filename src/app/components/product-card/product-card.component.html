@@ -7,11 +7,14 @@
                 <h5 class="card-title">{{product["name"]}}</h5>
                 <p class="card-text">{{product["description"]}}</p>
                 <p class="card-text">{{product["price"]}} so'm</p>
-                @if (canDelete) {
-                    <button (click)="deleteProduct(product['id'])" [id]="product['id']" class="btn btn-danger card-btn">O'chirish</button>
+                @if (cardStatus=="delete") {
+                    <button (click)="deleteProduct(product['id'])" [id]="'delete-'+product['id']" class="btn btn-danger card-btn">O'chirish</button>
                 }
-                @else {
-                    <button href="#" class="btn btn-success card-btn">Savatga qo'shish</button>
+                @else if(cardStatus=="create") {
+                    <button (click)="createBasket(product['id'])" [id]="'create-'+product['id']" class="btn btn-success card-btn">Savatga qo'shish</button>
+                }
+                @else if(cardStatus=="get"){
+                    <button disabled class="btn btn-success card-btn">Sotib olgansiz hisob)</button>
                 }
               </div>
             </div>

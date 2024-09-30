@@ -23,6 +23,10 @@ import { SideBarComponent } from './components/side-bar/side-bar.component';
 import { UsersProductsComponent } from './main-pages/users-products/users-products.component';
 import { SecondaryNavbarComponent } from './components/secondary-navbar/secondary-navbar.component';
 import { ProductCardComponent } from './components/product-card/product-card.component';
+import { StatisticsComponent } from './main-pages/statistics/statistics.component';
+import { ChartModule } from 'primeng/chart';
+import { BasketComponent } from './main-pages/basket/basket.component';
+
 
 @NgModule({
   declarations: [
@@ -37,7 +41,9 @@ import { ProductCardComponent } from './components/product-card/product-card.com
     SideBarComponent,
     UsersProductsComponent,
     SecondaryNavbarComponent,
-    ProductCardComponent
+    ProductCardComponent,
+    StatisticsComponent,
+    BasketComponent
   ],
   imports: [
     BrowserModule,
@@ -48,7 +54,8 @@ import { ProductCardComponent } from './components/product-card/product-card.com
     ButtonModule,
     RippleModule,
     FormsModule,
-    RouterModule
+    RouterModule,
+    ChartModule
   ],
   providers: [MessageService],
   bootstrap: [AppComponent]

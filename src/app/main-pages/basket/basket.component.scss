@@ -1,0 +1,29 @@
+.main{
+    width: 100%;
+    min-height: 100vh;
+    background-image: url(../../../assets/watermelon-background-2.jpg);
+    background-size: cover;
+}
+
+.content-handler{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.header{
+    color: white;
+}
+
+.big-content-handler{
+    width: 100%;
+    min-height: 90vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.inner-main{
+    width: 100%;
+    padding: 50px;
+}

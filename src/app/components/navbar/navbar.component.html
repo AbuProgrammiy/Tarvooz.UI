@@ -24,6 +24,13 @@
                     <ul class="navbar-elements-list">
                         <li class="navbar-element">
                             @if (isUserRegistered) {
+                                <a routerLink="basket" class="btn btn-danger">
+                                    <i class="bi bi-basket2"></i>Savatcha
+                                </a>
+                            }
+                        </li>
+                        <li class="navbar-element">
+                            @if (isUserRegistered) {
                                 <a routerLink="profile" class="btn btn-success">
                                     <i class="bi bi-person-circle"></i>Profil
                                 </a>

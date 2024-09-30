@@ -1,0 +1,39 @@
+<div class="main">
+    <secondary-navbar />
+    @if (isLoading) {
+    <div class="big-content-handler">
+        <div class="spinner-border" style="width: 3rem; height: 3rem;" role="status">
+            <span class="visually-hidden">Loading...</span>
+        </div>
+    </div>
+    }
+    @else {
+    <div class="content-handler">
+        <h1 class="header">Eng ko'p qidirilgan kalit so'zlar:</h1>
+    </div>
+    <div class="content-handler">
+        <div class="search-count-statistics-handler">
+            <div class="card">
+                <p-chart type="bar" [data]="basicData" [options]="basicOptions" />
+            </div>
+        </div>
+    </div>
+    <div class="content-handler">
+        <h1 class="categories-header">Eng ko'p qidirilayotgan kategorialar:</h1>
+    </div>
+    <div class="content-handler">
+        <div class="categories-statistics-handler">
+            <div class="card flex justify-content-center">
+                <p-chart type="pie" [data]="data" [options]="options" />
+            </div>
+        </div>
+    </div>
+    <div class="content-handler">
+        <h1 class="categories-header">Sotilgan mahsulotlarning o'rtacha narxi:</h1>
+    </div>
+    <div class="content-handler">
+        <h3><span class="min-price">{{avarageMinPrice}} so'm</span> - <span class="max-price">{{avarageMaxPrice}} so'm</span></h3>
+    </div>
+    <div class="space-300"></div>
+    }
+</div>

@@ -27,7 +27,6 @@ export class HomeComponent {
       error:(err)=>{
         this.messageService.add({ severity: 'error', summary: 'Xato', detail: 'Nimadir xato ketdi!' });
         this.isLoading=false
-
       }
     })
   }

@@ -9,6 +9,13 @@
             <a routerLink="/create-product" type="button" class="btn btn-success">Mahsulot qo'shish</a>
             <a routerLink="/users-products" type="button" class="btn btn-primary">Mening mahsulotlarim</a>
         </div>
-        <a routerLink="create-category" class="btn btn-success">Kategoriya qo'shish</a>
+        @if (isUserSuperAdmin) {
+            <div>
+                <a routerLink="create-category" class="btn btn-success">Kategoriya qo'shish</a>
+            </div>
+            <div>
+                <a routerLink="statistics" class="btn btn-primary">Statistikani ko'rish</a>
+            </div>
+        }
     </div>
 </div>
