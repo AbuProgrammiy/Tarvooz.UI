@@ -9,12 +9,20 @@ import { jwtDecode } from 'jwt-decode';
 export class SideBarComponent {
 
   constructor(){
-    if(typeof localStorage !== 'undefined'){
-      if(localStorage.getItem("accessToken")!=null){
-        this.isUserSuperAdmin=(jwtDecode(localStorage.getItem('accessToken')!)as any).Role=="SuperAdmin"
-      }
-    }
+    setInterval(()=>{
+      this.configureUserRole()
+    },1000)
   }
 
   isUserSuperAdmin!: boolean
+
+  configureUserRole(){
+    if(typeof localStorage !== 'undefined'){
+      if(localStorage.getItem("accessToken")!=null){
+        this.isUserSuperAdmin=(jwtDecode(localStorage.getItem('accessToken')!)as any).Role=="SuperAdmin"
+        return
+      }
+    }
+    this.isUserSuperAdmin=false
+  }
 }
