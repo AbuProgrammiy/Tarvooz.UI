@@ -1,11 +1,21 @@
 .main{
     width: 100%;
     min-height: 100vh;
+    background-image: url(../../../assets/watermelon-background-2.jpg);
+    background-size: cover;
+}
+
+.top-btn{
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+}
+
+.big-content-handler{
+    width: 100%;
+    min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    background-image: url(../../../assets/watermelon-background-2.jpg);
-    background-size: cover;
 }
 
 .inner-main{

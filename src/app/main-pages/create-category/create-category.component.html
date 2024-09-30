@@ -1,23 +1,26 @@
 <div class="main">
-    <div class="inner-main">
-        <div class="content-handler">
-            <h3>Mahsulot qo'shing</h3>
-        </div>
-        <div class="inputs-handler">
-            <div class="input-group mb-3">
-                <span class="input-group-text" id="basic-addon1">Nomi</span>
-                <input [disabled]="isLoading" [(ngModel)]="name" required type="text" class="form-control" placeholder="mahsulot nomi" aria-describedby="basic-addon1">
+    <secondary-navbar/>
+    <div class="big-content-handler">
+        <div class="inner-main">
+            <div class="content-handler">
+                <h3>Kategoria qo'shing</h3>
             </div>
-        </div>
-        <button (click)="createCategory()" [disabled]="isLoading" class="btn btn-danger submit-btn">
-            @if (isLoading) {
-                <div class="spinner-border spinner-border-sm text-light" role="status">
-                    <span class="visually-hidden">Loading...</span>
+            <div class="inputs-handler">
+                <div class="input-group mb-3">
+                    <span class="input-group-text" id="basic-addon1">Kategoriya nomi:</span>
+                    <input [disabled]="isLoading" [(ngModel)]="name" required type="text" class="form-control" placeholder="kategoria nomi" aria-describedby="basic-addon1">
                 </div>
-            }
-            @else {
-                Tayyor
-            }
-        </button>
+            </div>
+            <button (click)="createCategory()" [disabled]="isLoading" class="btn btn-danger submit-btn">
+                @if (isLoading) {
+                    <div class="spinner-border spinner-border-sm text-light" role="status">
+                        <span class="visually-hidden">Loading...</span>
+                    </div>
+                }
+                @else {
+                    Tayyor
+                }
+            </button>
+        </div>
     </div>
 </div>

@@ -1,5 +1,5 @@
 <div class="main">
-    <navbar/>
+    <navbar (giveCategoryName)="getProductsByCategoryName($event)" (giveSearchPattern)="getSearchPattern($event)"/>
     <div class="content-handler">
         <div id="carouselExampleIndicators" class="carousel slide">
             <div class="carousel-indicators">
@@ -31,16 +31,7 @@
         </div>
       }
       @else {
-        @for (product of products; track $index) {
-          <div class="card" style="width: 18rem;">
-            <img [src]="baseImageUrl+product['imagePath']" class="card-img-top" alt="...">
-            <div class="card-body">
-              <h5 class="card-title">{{product["name"]}}</h5>
-              <p class="card-text">{{product["description"]}}</p>
-              <button href="#" class="btn btn-success card-btn">Savatga qo'shish</button>
-            </div>
-          </div>
-        }
+        <product-card [products]="products" [canDelete]="false"/>
       }
     </div>
 </div>

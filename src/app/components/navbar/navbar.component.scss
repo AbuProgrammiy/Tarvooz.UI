@@ -26,10 +26,31 @@
 .categories-btn{
     margin-left: 20px;
     margin-right: 20px;
+    display: flex;
+}
+
+.bi-table{
+    margin-right: 5px;
 }
 
 .search-box{
     width: 400px;
+}
+
+.navbar-elements-list-handler{
+    width: 100%;
+    display: flex;
+    justify-content: end;
+}
+
+.navbar-elements-list{
+    display: flex;
+    list-style: none;
+}
+
+.navbar-element{
+    margin-left: 10px;
+    margin-left: 10px;
 }
 
 .accordion-body{

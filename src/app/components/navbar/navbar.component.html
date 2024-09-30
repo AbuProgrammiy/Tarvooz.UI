@@ -13,11 +13,29 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <button class="btn btn-danger categories-btn" data-bs-toggle="collapse"
                     data-bs-target="#flush-collapseOne" aria-expanded="false"
-                    aria-controls="flush-collapseOne">Kategorialar</button>
+                    aria-controls="flush-collapseOne">
+                    <i class="bi bi-table"></i>Kategorialar
+                </button>
                 <form class="d-flex search-box" role="search">
-                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                    <button class="btn btn-outline-success" type="submit">Qidirish</button>
+                    <input name="searchPattern" [(ngModel)]="searchPattern" class="form-control me-2" type="search" placeholder="Qidirish" aria-label="Search">
+                    <button (click)="exportSearchPattern()" class="btn btn-outline-success" type="submit">Qidirish</button>
                 </form>
+                <div class="navbar-elements-list-handler">
+                    <ul class="navbar-elements-list">
+                        <li class="navbar-element">
+                            @if (isUserRegistered) {
+                                <a routerLink="profile" class="btn btn-success">
+                                    <i class="bi bi-person-circle"></i>Profil
+                                </a>
+                            }
+                            @else {
+                                <a routerLink="sign-in-up" class="btn btn-success">
+                                    <i class="bi bi-people-fill"></i>Ro'yxatdan o'tish/Kirish
+                                </a>
+                            }
+                        </li>
+                    </ul>
+                </div>
             </div>
         </div>
     </nav>
@@ -27,7 +45,7 @@
             <div id="flush-collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
                 <div class="accordion-body">
                     @for (category of categories; track $index) {
-                    <button (click)="chooseCategory($event)" type="button" class="btn btn-outline-secondary category-btn">{{category["name"]}}</button>
+                    <button (click)="chooseCategory(category.name)" type="button" class="btn btn-outline-secondary category-btn">{{category["name"]}}</button>
                     }
                 </div>
             </div>

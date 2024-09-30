@@ -89,6 +89,7 @@ export class SignInUpComponent {
       next:(response)=>{
         if(response.isSuccess){
           localStorage.setItem("accessToken",response.response)
+          localStorage.setItem("isUserRegistered","true")
           this.router.navigate([""])
           this.messageService.add({ severity: 'success', summary: 'Muvaffaqiyat', detail: "Siz ro'yxattan o'tdingiz" });
         }
@@ -116,6 +117,7 @@ export class SignInUpComponent {
       next:(response)=>{
         if(response.isSuccess){
           localStorage.setItem("accessToken",response.response)
+          localStorage.setItem("isUserRegistered","true")
           this.router.navigate([""])
           this.messageService.add({ severity: 'success', summary: 'Muvaffaqiyat', detail: "Siz akkauntingiz kirdingiz" });
         }

@@ -1,0 +1,35 @@
+<div class="main">
+    <secondary-navbar/>
+    <div class="big-content-handler">
+        <div class="profile-handler">
+            <div class="content-saver">
+                <div class="content-handler">
+                    <div class="input-group mb-3 profile-input-handler">
+                        <span class="input-group-text profile-input-sign">Ism:</span>
+                        <input [value]="firstName" type="text" class="form-control profile-input" aria-label="Username"
+                            aria-describedby="basic-addon1">
+                    </div>
+                </div>
+                <div class="content-handler">
+                    <div class="input-group mb-3 profile-input-handler">
+                        <span class="input-group-text profile-input-sign">Familya:</span>
+                        <input [value]="lastName" type="text" class="form-control profile-input" aria-label="Username"
+                            aria-describedby="basic-addon1">
+                    </div>
+                </div>
+                <div class="content-handler">
+                    <div class="input-group mb-3 profile-input-handler">
+                        <span class="input-group-text profile-input-sign">Email:</span>
+                        <input [value]="email" type="text" class="form-control profile-input" aria-label="Username"
+                            aria-describedby="basic-addon1">
+                    </div>
+                </div>
+                <div class="content-handler">
+                    <button class="btn btn-primary" (click)="loggOut()">
+                        <i class="bi bi-door-open-fill"></i>Akkauntdan chiqish
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

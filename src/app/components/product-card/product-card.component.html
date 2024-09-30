@@ -1,0 +1,20 @@
+<div class="main">
+    @for (product of products; track $index) {
+        <div [id]="'card-'+product['id']">
+            <div class="card" style="width: 16rem;">
+              <img [src]="baseImageUrl+product['imagePath']" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">{{product["name"]}}</h5>
+                <p class="card-text">{{product["description"]}}</p>
+                <p class="card-text">{{product["price"]}} so'm</p>
+                @if (canDelete) {
+                    <button (click)="deleteProduct(product['id'])" [id]="product['id']" class="btn btn-danger card-btn">O'chirish</button>
+                }
+                @else {
+                    <button href="#" class="btn btn-success card-btn">Savatga qo'shish</button>
+                }
+              </div>
+            </div>
+        </div>
+    }
+</div>

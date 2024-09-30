@@ -1,0 +1,22 @@
+<div class="main">
+    <secondary-navbar />
+    <div class="inner-main">
+        @if (isLoading) {
+        <div class="content-handler">
+            <div class="main-spinner spinner-border text-dark" role="status">
+                <span class="visually-hidden">Loading...</span>
+            </div>
+        </div>
+        }
+        @else {
+            @if (products==[]) {
+                <div class="content-handler">
+                    <h1>Sizda hozircha mahsulot yo'q</h1>
+                </div>
+            }
+            @else {
+                <product-card [products]="products" [canDelete]="true" />
+            }
+        }
+    </div>
+</div>

@@ -17,6 +17,12 @@ import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { CreateProductComponent } from './main-pages/create-product/create-product.component';
 import { CreateCategoryComponent } from './main-pages/create-category/create-category.component';
+import { ProfileComponent } from './main-pages/profile/profile.component';
+import { DashboardComponent } from './main-pages/dashboard/dashboard.component';
+import { SideBarComponent } from './components/side-bar/side-bar.component';
+import { UsersProductsComponent } from './main-pages/users-products/users-products.component';
+import { SecondaryNavbarComponent } from './components/secondary-navbar/secondary-navbar.component';
+import { ProductCardComponent } from './components/product-card/product-card.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +31,13 @@ import { CreateCategoryComponent } from './main-pages/create-category/create-cat
     HomeComponent,
     NavbarComponent,
     CreateProductComponent,
-    CreateCategoryComponent
+    CreateCategoryComponent,
+    ProfileComponent,
+    DashboardComponent,
+    SideBarComponent,
+    UsersProductsComponent,
+    SecondaryNavbarComponent,
+    ProductCardComponent
   ],
   imports: [
     BrowserModule,

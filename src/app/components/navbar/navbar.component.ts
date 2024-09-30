@@ -1,6 +1,7 @@
 import { Component, EventEmitter, Output } from '@angular/core';
 import { CategoryService } from '../../services/category/category.service';
 import { MessageService } from 'primeng/api';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'navbar',
@@ -9,27 +10,33 @@ import { MessageService } from 'primeng/api';
 })
 export class NavbarComponent {
 
-  @Output() giveCategoryName=new EventEmitter()
+  @Output() giveCategoryName = new EventEmitter()
+  @Output() giveSearchPattern = new EventEmitter()
 
-  constructor(private categoryService:CategoryService, private messageService:MessageService){
+  constructor(private categoryService: CategoryService, private messageService: MessageService, private router: Router) {
     this.getAllCategory()
   }
-  
-  categories!:any
 
-  getAllCategory(){
+  isUserRegistered: boolean = (typeof localStorage !== 'undefined') ? (localStorage.getItem("isUserRegistered") == "true") : false
+  categories!: any
+  searchPattern!:string
+
+  getAllCategory() {
     this.categoryService.getAll().subscribe({
-      next:(response)=>{
-        this.categories=response
+      next: (response) => {
+        this.categories = response
       },
-      error:(err)=>{
+      error: (err) => {
         this.messageService.add({ severity: 'error', summary: 'Xato', detail: 'Nimadir xato ketdi!' });
       }
     })
   }
 
-  chooseCategory(name:any){
-    console.log(name);
-    this.giveCategoryName.emit(name)
+  chooseCategory(categoryName: any) {
+    this.giveCategoryName.emit(categoryName)
+  }
+
+  exportSearchPattern(){
+    this.giveSearchPattern.emit(this.searchPattern)
   }
 }

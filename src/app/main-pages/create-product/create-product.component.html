@@ -1,46 +1,52 @@
 <div class="main">
-    <div class="inner-main">
-        <div class="content-handler">
-            <h3>Mahsulot qo'shing</h3>
-        </div>
-        <div class="image-selector" onclick="document.getElementById('file-selector').click()">
-            @if (isImageSelected) {
+    <secondary-navbar/>
+    <div class="big-content-handler">
+        <div class="inner-main">
+            <div class="content-handler">
+                <h3>Mahsulot qo'shing</h3>
+            </div>
+            <div class="image-selector" onclick="document.getElementById('file-selector').click()">
+                @if (isImageSelected) {
                 <img class="product-image" src={{path}} alt="">
-            }
-            @else {
-                <p>rasmni tanlag</p>
-            }
-        </div>
-        <input (change)="getImage($event)" id="file-selector" class="file-selector" type="file">
-        <div class="inputs-handler">
-            <div class="input-group mb-3">
-                <span class="input-group-text" id="basic-addon1">Nomi</span>
-                <input [disabled]="isLoading" [(ngModel)]="name" required type="text" class="form-control" placeholder="mahsulot nomi" aria-describedby="basic-addon1">
-            </div>
-            <div class="input-group mb-3">
-                <span class="input-group-text">Tavsifi</span>
-                <textarea [disabled]="isLoading" class="form-control" [(ngModel)]="description"></textarea>
-            </div>
-            <div class="input-group mb-3">
-                <span class="input-group-text" id="basic-addon1">Narxi</span>
-                <input [disabled]="isLoading" [(ngModel)]="price" required type="text" class="form-control" placeholder="narxi" aria-describedby="basic-addon1">
-            </div>
-            <select [disabled]="isLoading" [(ngModel)]="category" class="form-select" aria-label="Default select example">
-                <option selected>Kategoriyani tanlang</option>
-                @for (category of categories; track $index) {
-                    <option>{{category["name"]}}</option>
                 }
-            </select>
-            <button (click)="createProduct()" [disabled]="isLoading" class="btn btn-danger submit-btn">
-            @if (isLoading) {
-                <div class="spinner-border spinner-border-sm text-light" role="status">
-                    <span class="visually-hidden">Loading...</span>
+                @else {
+                <p>rasmni tanlag</p>
+                }
+            </div>
+            <input (change)="getImage($event)" id="file-selector" class="file-selector" type="file">
+            <div class="inputs-handler">
+                <div class="input-group mb-3">
+                    <span class="input-group-text" id="basic-addon1">Nomi</span>
+                    <input [disabled]="isLoading" [(ngModel)]="name" required type="text" class="form-control"
+                        placeholder="mahsulot nomi" aria-describedby="basic-addon1">
                 </div>
-            }
-            @else {
-                Tayyor
-            }
-        </button>
+                <div class="input-group mb-3">
+                    <span class="input-group-text">Tavsifi</span>
+                    <textarea [disabled]="isLoading" class="form-control" [(ngModel)]="description"></textarea>
+                </div>
+                <div class="input-group mb-3">
+                    <span class="input-group-text" id="basic-addon1">Narxi</span>
+                    <input [disabled]="isLoading" [(ngModel)]="price" required type="text" class="form-control"
+                        placeholder="narxi" aria-describedby="basic-addon1">
+                </div>
+                <select [disabled]="isLoading" [(ngModel)]="category" class="form-select"
+                    aria-label="Default select example">
+                    <option selected>Kategoriyani tanlang</option>
+                    @for (category of categories; track $index) {
+                    <option>{{category["name"]}}</option>
+                    }
+                </select>
+                <button (click)="createProduct()" [disabled]="isLoading" class="btn btn-danger submit-btn">
+                    @if (isLoading) {
+                    <div class="spinner-border spinner-border-sm text-light" role="status">
+                        <span class="visually-hidden">Loading...</span>
+                    </div>
+                    }
+                    @else {
+                    Tayyor
+                    }
+                </button>
+            </div>
         </div>
     </div>
 </div>
