@@ -7,5 +7,14 @@ import { jwtDecode } from 'jwt-decode';
   styleUrl: './side-bar.component.scss'
 })
 export class SideBarComponent {
-  isUserSuperAdmin: boolean = (jwtDecode((typeof localStorage!=="undefined")?localStorage.getItem("accessToken")!:"")as any).Role=="SuperAdmin"
+
+  constructor(){
+    if(typeof localStorage !== 'undefined'){
+      if(localStorage.getItem("accessToken")!=null){
+        this.isUserSuperAdmin=(jwtDecode(localStorage.getItem('accessToken')!)as any).Role=="SuperAdmin"
+      }
+    }
+  }
+
+  isUserSuperAdmin!: boolean
 }

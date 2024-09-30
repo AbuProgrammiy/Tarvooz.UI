@@ -1,4 +1,4 @@
 export const environment = {
-    baseURL:"https://localhost:7190/api/",
-    baseImageURL:"https://localhost:7190"
+    baseURL:"https://tarvoozapi.more-info.uz/api/",
+    baseImageURL:"https://tarvoozapi.more-info.uz"
 };
