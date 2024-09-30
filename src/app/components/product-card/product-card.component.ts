@@ -4,6 +4,7 @@ import { ProductService } from '../../services/product/product.service';
 import { MessageService } from 'primeng/api';
 import { jwtDecode } from 'jwt-decode';
 import { BasketService } from '../../services/basket/basket.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'product-card',
@@ -14,7 +15,7 @@ export class ProductCardComponent {
   @Input() products!: any
   @Input() cardStatus!: string
 
-  constructor(private basketService:BasketService,private productService: ProductService, private messageService: MessageService) { }
+  constructor(private router:Router,private basketService:BasketService,private productService: ProductService, private messageService: MessageService) { }
 
   baseImageUrl: string = environment.baseImageURL
 
@@ -41,6 +42,12 @@ export class ProductCardComponent {
   }
 
   createBasket(productId:string){
+
+    if(typeof localStorage !=="undefined"){
+      if(localStorage.getItem("isUserRegistered")!="true"){
+        this.router.navigate([""])
+      }
+    }
 
     const body={
       userId:(jwtDecode(localStorage.getItem("accessToken")!)as any).Id,
